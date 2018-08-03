@@ -32,6 +32,16 @@ $blood="";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 	$blood = $_REQUEST['bloodgroup'];
 	$loc = $_REQUEST['locality'];
+	$name = $_REQUEST['name'];
+	$email = $_REQUEST['email'];
+	$contact = $_REQUEST['contact'];
+	$rdate = new DateTime('today');
+	$result = $rdate->format('Y-m-d H:i:s');
+	
+	 $request_submit="insert into requests(name,email,contact,locality,bloodgroup,date) values ('$name','$email','$contact','$loc','$blood','$result')";
+        //die($user_registration_query);
+        $user_registration_result=mysqli_query($con,$request_submit) or die(mysqli_error($con));
+        
 }
 	/*$servername = "localhost";
 	$user = "root";
@@ -53,17 +63,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	fclose($myfile);
 	
 	//End
-	$sql = "SELECT * from volunteers where bloodgroup = '$blood' AND locality = '$loc' AND gender = 'Male' UNION SELECT * from volunteers where bloodgroup = '$blood' AND locality = '$loc' AND gender = 'Female' UNION SELECT * from volunteers where bloodgroup = '$blood' AND locality != '$loc' AND gender = 'Male' UNION SELECT * from volunteers where bloodgroup = '$blood' AND locality != '$loc' AND gender = 'Female'";
+	$sql = "SELECT * from volunteers where verify = 'true' AND bloodgroup = '$blood' AND locality = '$loc' AND gender = 'Male' UNION SELECT * from volunteers where verify = 'true' AND bloodgroup = '$blood' AND locality = '$loc' AND gender = 'Female' UNION SELECT * from volunteers where verify = 'true' AND bloodgroup = '$blood' AND locality != '$loc' AND gender = 'Male' UNION SELECT * from volunteers where verify = 'true' AND bloodgroup = '$blood' AND locality != '$loc' AND gender = 'Female'";
 	
 	$result = $con->query($sql);
 	
 	//if($result->num_rows > 0)
 	//{
+		if($result->num_rows > 0){
 	$to = new DateTime('today');
 		echo "<div class='table-responsive'>";
 		echo " <table class='table table-bordered table-striped'>";
 		
 			echo"<th>Name</th><th> Email</th><th>Contact</th><th>Blood Group</th><th>Gender</th><th>Locality</th><th>Age</th>";
+		
+		
 		while($row = $result->fetch_assoc()){
 		$id = $row['id'];
 		$from = new DateTime($row["date"]);
@@ -82,13 +95,16 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			
 			
 		}
-		
 		echo"</table></div>";
+		}
 		
-	//}
-	//else {
-	//	echo "0 results ";
-	//}
+		
+	else{
+		echo "<center><h4><p>We're sorry! Our Database Currently has no volunteers for the specified blood type.</p>";
+		echo "<p>Sorry for the inconvenience caused.</p></center></h4>";
+	}	
+	
+	
 	
 	
 	$con->close();
@@ -98,8 +114,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
            <footer class="footer">
                <div class="container">
                <center>
+			   <a href="about.php"><span class="glyphicon glyphicon-question-sign"></span> About Us </a> | 
+			   <a href="contact.php"><span class="glyphicon glyphicon-envelope"></span> Contact Us </a></li>
                    <p>Copyright &copy Online BloodBank Portal. All Rights Reserved.</p>
-                   <p>This website is developed by Rishabh Aggarwal</p>
+                   
                </center>
                </div>
            </footer>

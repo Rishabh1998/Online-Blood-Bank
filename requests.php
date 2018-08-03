@@ -1,12 +1,13 @@
 <?php
+    require 'connection.php';
     session_start();
-    session_unset();
-    session_destroy();
+    
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="shortcut icon" href="img/lifestyleStore.png" />
+        <link rel="shortcut icon" href="img/logo.png" />
         <title>Online BloodBank Portal</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,20 +25,46 @@
             <?php
                 require 'header.php';
             ?>
-            <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading"></div>
-                            <div class="panel-body">
-                                <p>You have been logged out. <a href="login.php">Login again.</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <br><br>
+        </div>
+<div class="container">		
+<?php 
+
+	$sql = "SELECT * from requests";
+	
+	$result = $con->query($sql);
+	
+	//if($result->num_rows > 0)
+	//{
+		if($result->num_rows > 0){
+	 
+		
+		
+		while($row = $result->fetch_assoc()){
+		echo "<div class='panel panel-danger'>";
+		echo "<div class='panel-heading'>";
+		echo "Blood request for " . $row["bloodgroup"]  . " &nbsp blood group </div>";
+		echo "<div class='panel-body'>" . $row['name'] ." requires ". $row['bloodgroup']." blood group in ". $row['locality'].". If you can help him please call this number ". $row['contact'].".</div>";
+		echo "<div class='panel-footer'>Request made on ". $row['date']." <br> Note: Date Format YYYY-MM-DD</div></div>";
+		
+		}
+		
+		}
+		
+		
+	else{
+		echo "<center><h4><p>We're sorry! Our Database Currently has no blood donors requests.</p></center></h4>";
+		
+	}	
+	
+	
+	
+	
+	$con->close();
+	?>  
             </div>
-            <footer class="footer">
+            <br><br><br><br><br><br>
+           <footer class="footer">
                <div class="container">
                <center>
 			   <a href="about.php"><span class="glyphicon glyphicon-question-sign"></span> About Us </a> | 
@@ -47,6 +74,7 @@
                </center>
                </div>
            </footer>
-        </div>
+
+        
     </body>
 </html>

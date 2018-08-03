@@ -17,7 +17,7 @@
         <meta http-equiv="refresh" content="2;url=signup.php" />
         <?php
     }
-    $contact=$_POST['contact'];
+    $contact=mysqli_real_escape_string($con,$_POST['contact']);
     //$city=mysqli_real_escape_string($con,$_POST['city']);
     $bgroup=$_POST['bloodgroup'];
 	$locality=$_POST['locality'];
@@ -45,12 +45,45 @@
         //die($user_registration_query);
         $user_registration_result=mysqli_query($con,$user_registration_query) or die(mysqli_error($con));
         echo "User successfully registered";
-        $_SESSION['email']=$email;
-        //The mysqli_insert_id() function returns the id (generated with AUTO_INCREMENT) used in the last query.
-        $_SESSION['id']=mysqli_insert_id($con); 
-        //header('location: index.php');  //for redirecting
+		
+		$user_authentication_query="select id from volunteers where email='$email'";
+    $user_authentication_result=mysqli_query($con,$user_authentication_query) or die(mysqli_error($con));
+	$row=mysqli_fetch_array($user_authentication_result);
+    $id = $row['id'];
+    
+		// Message Body
+      
+	  $from = "Online BloodBank ";
+        
+        $headers = "From: " . strip_tags($from) . "\r\n";
+        $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
+        
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+       
+       $message = '<html><body>';
+	   
+		$message .= '<p>Hello' . $name . ',</p>';
+		$message .= '<p>Thank You for volunteering in online Blood Portal</p>';
+		$message .= '<p> Please ';
+		$message .= "<a href='http://www.onlinebloodportak.tk/verification.php?email=".$email."+&id=".$id."'>Click Here</a>to verify your account.</p>";
+		$message .= '<h4>Best Regards.</h4>';
+		$message .= '</body></html>';
+	   
+	   
+	   
+        
+
+// In case any of our lines are larger than 70 characters, we should use wordwrap()
+$message = wordwrap($message, 70, "\r\n");
+
+// Send
+mail($email, 'Verification required for Online Blood Portal', $message,$headers);
+	  
+	  
+	  // Message body ends
         ?>
-        <meta http-equiv="refresh" content="3;url=index.php" />
+        <meta http-equiv="refresh" content="0;url=verify.php" />
         <?php
     }
     

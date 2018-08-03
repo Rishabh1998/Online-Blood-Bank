@@ -26,7 +26,7 @@
             <br><br><br>
            <div class="container">
                 <div class="row">
-                    <div class="col-xs-6 col-xs-offset-3">
+                    <div class="col-sm-6 col-sm-offset-3">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3>LOGIN</h3>
@@ -45,17 +45,19 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="panel-footer">Don't have an account yet? <a href="signup.php">Register</a></div>
+                            <div class="panel-footer">Not a Volunteer?  <a href="signup.php">Volunteer here</a></div>
                         </div>
                     </div>
                 </div>
            </div>
-           <br><br><br><br><br>
+           <br><br><br><br><br><br>
            <footer class="footer">
                <div class="container">
                <center>
+			   <a href="about.php"><span class="glyphicon glyphicon-question-sign"></span> About Us </a> | 
+			   <a href="contact.php"><span class="glyphicon glyphicon-envelope"></span> Contact Us </a></li>
                    <p>Copyright &copy Online BloodBank Portal. All Rights Reserved. </p>
-                   <p>This website is developed by Rishabh Aggarwal<p>
+                   
                </center>
                </div>
            </footer>

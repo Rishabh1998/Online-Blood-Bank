@@ -29,9 +29,10 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="panel panel-primary">
-                            <div class="panel-heading"></div>
+                            <div class="panel-heading">Just One More Step...</div>
                             <div class="panel-body">
-                                <p>You have been logged out. <a href="login.php">Login again.</a></p>
+                                <p>We've sent you an email to verify your details.Please verify your account.</p>
+								<b><i>NOTE </b></i>: Your details will not show in the donors DataBase until you verify.
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,6 @@
 <?php
     session_start();
-    session_unset();
-    session_destroy();
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,17 +25,16 @@
             ?>
             <br>
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading"></div>
-                            <div class="panel-body">
-                                <p>You have been logged out. <a href="login.php">Login again.</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               <div class="panel panel-info">
+				<div class="panel-heading">Need to Contact us?</div>
+				<div class="panel-body">
+				Need Help with Something? Feel free to contact us or write to us at <b>onlinebloodportal@gmail.com</b>
+				
+ </div></div>
+ 
+
             </div>
+			<br><br>
             <footer class="footer">
                <div class="container">
                <center>
@@ -46,6 +44,7 @@
                    
                </center>
                </div>
+			   
            </footer>
         </div>
     </body>
