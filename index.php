@@ -56,9 +56,6 @@ session_start();
   A single pint can save three lives,<br>
  a single gesture can create a million smiles.
  </div></center>
-
-
-
 <div class="intro2 panel-body>"><center>
 Blood is the most precious gift that anyone can give to another person — the gift of life. A decision to donate your blood can save a life, or even several if your blood is separated into its components<br>
 Online BloodBank provides you a source to request or to donate blood. <br>
