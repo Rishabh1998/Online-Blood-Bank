@@ -14,7 +14,7 @@
                        <h1>Your Blood Can Save a life.</h1>
                        <p>Be part of a community where you can help save a life.</p>
                        <a href="signup.php" class="btn btn-danger">Volunteer Now</a>
-					   <?php
+			<?php
                            }
                            ?>
                    </div>
