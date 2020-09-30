@@ -68,8 +68,6 @@ The blood you give is a lifeline in an emergency and for people who need long-te
 <h3>Save a Life, by gifting them platelets!</h3></center>
 </div>
 </div>
-
-
 		<br><br><br>	
 		   
 	<footer class="footer"> 
