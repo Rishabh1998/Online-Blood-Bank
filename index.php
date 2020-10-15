@@ -32,7 +32,6 @@ session_start();
 	<img src="images/blood.jpg" class="img-responsive">
       
     </div>
-
     <div class="item">
       <img src="images/452.jpg" class="img-responsive">
     </div>
