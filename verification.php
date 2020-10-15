@@ -9,8 +9,6 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
 	$id = $_GET['id'];
 	$verification="update volunteers set verify='true' where email='$email' AND id = '$id'";
     $ver_result=mysqli_query($con,$verification) or die(mysqli_error($con));
-	
-
 $user_authentication_query="select name,contact,locality,verify from volunteers where email='$email'";
     $user_authentication_result=mysqli_query($con,$user_authentication_query) or die(mysqli_error($con));
 	$row=mysqli_fetch_array($user_authentication_result);
