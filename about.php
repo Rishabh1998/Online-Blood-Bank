@@ -3,7 +3,7 @@
     
 ?>
 <!DOCTYPE html>
-<html>
+<Html>
     <head>
         <link rel="shortcut icon" href="img/lifestyleStore.png" />
         <title>Online BloodBank Portal</title>
@@ -67,4 +67,4 @@ The main objectives of the Online BloodBank are to:
            </footer>
         </div>
     </body>
-</html>
+</Html>
