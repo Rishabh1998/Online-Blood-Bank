@@ -91,9 +91,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			echo"<td>" . $row["locality"] ."</td>";
 			echo"<td>" . $from->diff($to)->y ."</td>";
 			
-			echo "</tr>";
-			
-			
+			echo "</tr>";	
 		}
 		echo"</table></div>";
 		}
