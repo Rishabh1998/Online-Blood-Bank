@@ -38,9 +38,12 @@ session_start();
         $rdate = new DateTime('today');
         $result = $rdate->format('Y-m-d H:i:s');
 
-        $request_submit = "insert into requests(name,email,contact,locality,bloodgroup,date) values ('$name','$email','$contact','$loc','$blood','$result')";
-        //die($user_registration_query);
-        $user_registration_result = mysqli_query($con, $request_submit) or die(mysqli_error($con));
+        $request_submit = "insert into requests(name,email,contact,locality,bloodgroup,date) values (?,?,?,?,?,?)";
+        $stmt = mysqli_prepare($con,$request_submit) or die(mysqli_error($con));
+        // bind parameters; 6 variables with string type
+        $stmt->bind_param("ssssss", $name,$email,$contact,$loc,$blood,$result);
+        // execute query
+        $stmt->execute() or die(mysqli_error($con));
 
     }
     /*$servername = "localhost";
