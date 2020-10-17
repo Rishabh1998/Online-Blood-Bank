@@ -28,7 +28,7 @@
                <div class="panel panel-info">
 				<div class="panel-heading">Who we are?</div>
 				<div class="panel-body">
- Online Blood Bank has established in Dehradun as an Initiative by the Students of a Student club i.e Red Ribbon Club in the Campus of DIT University, Dehradun (Uttrakhand) under the guidance of our teacher Mrs. Kiran Mamgain. The primary objective of the Council is to provide adequate and safe blood and its components for those who need.</div></div>
+ Online Blood Bank has established in Dehradun as an Initiative by the Students of a university Student club i.e Red Ribbon Club in the Campus of DIT University, Dehradun (Uttrakhand) under the guidance of our teacher Mrs. Kiran Mamgain. The primary objective of the Council is to provide adequate and safe blood and its components for those who need.</div></div>
  
 <div class="panel panel-info">
 <div class="panel-heading">About Red Ribbon Club</div>
