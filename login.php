@@ -2,6 +2,7 @@
     require 'connection.php';
     session_start();
 ?>
+<!-- login code for portal -->
 <!DOCTYPE html>
 <html>
     <head>
