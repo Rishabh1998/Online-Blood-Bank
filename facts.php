@@ -54,6 +54,12 @@ session_start();
 <li> Blood drives hosted by companies, schools, places of worship and civic organizations supply roughly half of all blood donations across the US.</li>
 <li> People who donate blood are volunteers and are not paid for their donation.</li>
 <li> Blood donation. It’s about an hour of your time. It’s About Life.</li>
+<li>Just 1 donation can save up to 3 lives.</li>
+<li>The average red blood cell transfusion is 3 pints (or 3 whole-blood donations).</li>
+<li>More than 1 million people every year are diagnosed with cancer for the first time. Many of them will need blood—sometimes daily—during chemotherapy.</li>
+<li>More than 38,000 blood donations are needed every day.</li>
+<li>Type O-negative whole blood can be transfused to people with any blood type, but this type of blood is rare, and supplies of it are low.</li>
+<li>Type AB plasma can be transfused to patients with all other blood types, but it's also in short supply.</li>
 		   
 		   </ul></div>
 		   </div>
